@@ -1,0 +1,23 @@
+@mixin animate-movement($turn-number) {
+	animation: 23s #{$turn-number} 1 normal forwards 5s;
+} //animation-duration animation-name animation-iteration-count animation-direction animation-fill-mode animation-delay;
+
+@mixin linearly-scale-font(
+	$min-font-size,
+	$max-font-size,
+	$min-width,
+	$max-width
+) {
+	$slope: calc(
+		($max-font-size - $min-font-size) / ($max-width - $min-width)
+	); // m = y2 - y1 / x2 - x1
+	$y-axis: calc(
+		($min-width * $slope * -1) + $min-font-size
+	); // y = mx+b (slope-intercept form of an eq'n of a line)
+
+	font-size: clamp(
+		$min-font-size,
+		($y-axis) + ($slope * 100vw),
+		$max-font-size
+	);
+}

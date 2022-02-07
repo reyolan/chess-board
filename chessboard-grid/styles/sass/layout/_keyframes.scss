@@ -1,0 +1,383 @@
+@use "../abstract/mixins" as *;
+
+.white-first > div:nth-child(5) > span.cream {
+	@include animate-movement(white-pawn-e2);
+}
+
+.black-first > div:nth-child(3) > span.black {
+	@include animate-movement(black-pawn-c7);
+}
+
+.black-first > div:nth-child(7) > span.cream {
+	@include animate-movement(white-knight-g1);
+}
+
+.black-first > div:nth-child(4) > span.black {
+	@include animate-movement(black-pawn-d7);
+}
+
+.white-first > div:nth-child(4) > span.cream {
+	@include animate-movement(white-pawn-d2);
+}
+
+.white-first > div:nth-child(7) > span.black {
+	@include animate-movement(black-knight-g8);
+}
+
+.black-first > div:nth-child(2) > span.cream {
+	@include animate-movement(white-knight-b1);
+}
+
+.black-first > div:nth-child(7) > span.black {
+	@include animate-movement(black-pawn-g7);
+}
+
+.white-first > div:nth-child(6) > span.cream {
+	@include animate-movement(white-pawn-f2);
+}
+
+.white-first > div:nth-child(3) > span.black {
+	@include animate-movement(black-bishop-c8);
+}
+
+.black-first > div:nth-child(6) > span.cream {
+	@include animate-movement(white-bishop-f1);
+}
+
+.white-first > div:nth-child(2) > span.black {
+	@include animate-movement(black-knight-b8);
+}
+
+.white-first > div:nth-child(4) > span.black {
+	@include animate-movement(black-queen-d8);
+}
+
+.black-first > div:nth-child(4) > span.cream {
+	@include animate-movement(white-queen-d1);
+}
+
+.black-first > div:nth-child(5) > span.black {
+	@include animate-movement(black-pawn-e7);
+}
+
+// top, if negative -- up direction
+// right, if negatitve -- right direction
+
+@keyframes white-pawn-e2 {
+	from {
+		top: 0;
+	}
+	4.348% {
+		top: -200%;
+	}
+	to {
+		top: -200%;
+	}
+}
+
+@keyframes black-pawn-c7 {
+	from {
+		top: 0;
+	}
+	4.348% {
+		top: 0;
+	}
+	8.696% {
+		top: 200%;
+	}
+	21.739% {
+		top: 200%;
+		right: 13.2%;
+	}
+	26.087% {
+		top: 300%;
+		right: -86.8%;
+	}
+	30.435% {
+		visibility: hidden;
+	}
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes white-knight-g1 {
+	from {
+		top: 0;
+		right: 13.2%;
+	}
+	8.696% {
+		top: 0;
+		right: 13.2%;
+	}
+	13.043% {
+		top: -200%;
+		right: 113.2%;
+	}
+	26.087% {
+		top: -200%;
+		right: 113.2%;
+	}
+	30.435% {
+		top: -300%;
+		right: 313.2%;
+	}
+	78.261% {
+		top: -300%;
+		right: 313.2%;
+	}
+	82.609% {
+		top: -200%;
+		right: 113.2%;
+	}
+	86.957% {
+		visibility: hidden;
+	}
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes black-pawn-d7 {
+	from {
+		top: 0;
+	}
+	13.043% {
+		top: 0;
+	}
+	17.391% {
+		top: 100%;
+	}
+	to {
+		top: 100%;
+	}
+}
+
+@keyframes white-pawn-d2 {
+	17.391% {
+		top: 0;
+	}
+	21.739% {
+		top: -200%;
+	}
+	26.087% {
+		visibility: hidden;
+	}
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes black-knight-g8 {
+	from {
+		top: 0;
+		right: 13.2%;
+	}
+	30.435% {
+		top: 0;
+		right: 13.2%;
+	}
+	34.783% {
+		top: 200%;
+		right: 113.2%;
+	}
+	to {
+		top: 200%;
+		right: 113.2%;
+	}
+}
+
+@keyframes white-knight-b1 {
+	from {
+		top: 0;
+		right: 13.2%;
+	}
+	34.783% {
+		top: 0;
+		right: 13.2%;
+	}
+	39.130% {
+		top: -200%;
+		right: -86.8%;
+	}
+	95.652% {
+		top: -200%;
+		right: -86.8%;
+	}
+	to {
+		top: -400%;
+		right: -186.8%;
+	}
+}
+
+@keyframes black-pawn-g7 {
+	from {
+		top: 0;
+	}
+	39.130% {
+		top: 0;
+	}
+	43.478% {
+		top: 100%;
+	}
+	to {
+		top: 100%;
+	}
+}
+
+@keyframes white-pawn-f2 {
+	from {
+		top: 0;
+	}
+	43.478% {
+		top: 0;
+	}
+	47.826% {
+		top: -200%;
+	}
+	to {
+		top: -200%;
+	}
+}
+
+@keyframes black-bishop-c8 {
+	from {
+		top: 0;
+		right: 13.2%;
+	}
+	47.826% {
+		top: 0;
+		right: 13.2%;
+	}
+	52.174% {
+		top: 400%;
+		right: -386.8%;
+	}
+	82.609% {
+		top: 400%;
+		right: -386.8%;
+	}
+	86.957% {
+		top: 500%;
+		right: -286.8%;
+	}
+	91.304% {
+		visibility: hidden;
+	}
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes white-bishop-f1 {
+	from {
+		top: 0;
+		right: 13.2%;
+	}
+	52.174% {
+		top: 0;
+		right: 13.2%;
+	}
+	56.522% {
+		top: -400%;
+		right: 413.2%;
+	}
+	60.870% {
+		top: -400%;
+		right: 413.2%;
+	}
+	65.217% {
+		top: -600%;
+		right: 213.2%;
+	}
+	69.565% {
+		visibility: hidden;
+	}
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes black-knight-b8 {
+	from {
+		top: 0;
+		right: 13.2%;
+	}
+	56.522% {
+		top: 0;
+		right: 13.2%;
+	}
+	60.870% {
+		top: 100%;
+		right: -186.8%;
+	}
+	65.217% {
+		visibility: hidden;
+	}
+	to {
+		visibility: hidden;
+	}
+}
+
+@keyframes black-queen-d8 {
+	from {
+		top: 0;
+	}
+	65.217% {
+		top: 0;
+	}
+	69.565% {
+		top: 100%;
+	}
+	91.304% {
+		top: 100%;
+		right: 13.2%;
+	}
+	95.652% {
+		top: 400%;
+		right: -286.5%;
+	}
+	to {
+		top: 400%;
+		right: -286.5%;
+	}
+}
+
+@keyframes white-queen-d1 {
+	from {
+		top: 0;
+	}
+	69.565% {
+		top: 0;
+	}
+	73.913% {
+		top: -200%;
+	}
+	86.957% {
+		top: -200%;
+		right: 13.2%;
+	}
+	91.304% {
+		top: -200%;
+		right: -186.5%;
+	}
+	to {
+		top: -200%;
+		right: -186.5%;
+	}
+}
+
+@keyframes black-pawn-e7 {
+	from {
+		top: 0;
+	}
+	73.913% {
+		top: 0;
+	}
+	78.261% {
+		top: 200%;
+	}
+	to {
+		top: 200%;
+	}
+}

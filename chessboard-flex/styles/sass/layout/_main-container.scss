@@ -1,0 +1,91 @@
+@use "../abstract/variables" as *;
+
+#main-container {
+	min-height: 100vh;
+	background-color: rgb(224, 219, 219);
+}
+
+header {
+	padding-top: 6rem;
+}
+
+#header-board-container {
+	min-height: inherit;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5rem;
+}
+
+#board-legend-container {
+	height: clamp(240px, 90vw, 540px);
+	width: clamp(240px, 90vw, 540px);
+
+	background-color: rgb(17, 17, 17);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+.horizontal-coordinate {
+	width: 88.9%;
+	height: 5.55%;
+	display: flex;
+
+	> div {
+		width: 12.5%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+#board-vertical-coordinate-container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+
+.vertical-coordinate {
+	height: 100%;
+	width: 5.55%;
+
+	> div {
+		height: 12.5%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+#board-container {
+	width: 88.9%;
+	display: flex;
+	flex-flow: column;
+	border: solid $square-cream 2px;
+}
+
+.row {
+	height: 12.5%;
+	display: flex;
+
+	> div {
+		width: 12.5%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.white-first div:nth-child(odd),
+.black-first div:nth-child(even) {
+	background-color: $square-cream;
+}
+
+.white-first div:nth-child(even),
+.black-first div:nth-child(odd) {
+	background-color: $square-black;
+}

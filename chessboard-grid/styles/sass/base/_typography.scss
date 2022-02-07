@@ -1,0 +1,34 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+html {
+	font-size: 62.5%;
+	font-family: "TypographytimesRegular", sans-serif;
+}
+
+header {
+	@include linearly-scale-font(1.5rem, 2.8rem, 24.4rem, 54.4rem);
+}
+
+.vertical-coordinate div {
+	@include linearly-scale-font(1rem, 2rem, 24.4rem, 54.4rem);
+	font-weight: bold;
+	color: $square-cream;
+}
+
+.horizontal-coordinate div {
+	@include linearly-scale-font(1rem, 2rem, 24.4rem, 54.4rem);
+	font-weight: bold;
+	color: $square-cream;
+}
+
+.black {
+	@include linearly-scale-font(1.6rem, 4.4rem, 24.4rem, 54.4rem);
+	color: rgb(97, 94, 94);
+}
+
+.cream {
+	@include linearly-scale-font(1.6rem, 4.4rem, 24.4rem, 54.4rem);
+	color: white;
+	text-shadow: 0 0 25px $square-black;
+}

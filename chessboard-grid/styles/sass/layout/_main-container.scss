@@ -1,0 +1,92 @@
+@use "../abstract/variables" as *;
+
+#main-container {
+	min-height: 100vh;
+	background-color: rgb(224, 219, 219);
+}
+
+header {
+	align-self: center;
+}
+
+#header-board-container {
+	min-height: inherit;
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	justify-items: center;
+}
+
+#board-legend-container {
+	height: clamp(244px, 90vw, 544px);
+	width: clamp(244px, 90vw, 544px);
+	display: grid;
+	grid-template-rows: calc((30 / 544) * 100%) calc((484 / 544) * 100%) calc(
+			(30 / 544) * 100%
+		);
+	grid-template-columns: calc(30fr / 544) calc(484fr / 544) calc(30fr / 544);
+	background-color: black;
+	border-radius: 5px;
+	justify-items: center;
+	grid-template-areas:
+		"horizontal-coordinate-first horizontal-coordinate-first horizontal-coordinate-first"
+		"vertical-coordinate-first board vertical-coordinate-last"
+		"horizontal-coordinate-last horizontal-coordinate-last horizontal-coordinate-last";
+}
+
+.horizontal-coordinate {
+	width: calc((484 / 544) * 100%);
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-auto-flow: column;
+	justify-items: center;
+	align-items: center;
+	grid-area: horizontal-coordinate-first;
+
+	&:last-child {
+		grid-area: horizontal-coordinate-last;
+	}
+}
+
+.vertical-coordinate {
+	display: grid;
+	align-items: center;
+	grid-area: vertical-coordinate-first;
+
+	&:nth-last-child(2) {
+		grid-area: vertical-coordinate-last;
+	}
+}
+
+#board-container {
+	border: solid $square-cream 2px;
+	width: 100%;
+	height: 100%;
+	grid-area: board;
+}
+
+.row {
+	display: grid;
+	grid-template-columns: repeat(8, 12.5%);
+	height: 12.5%;
+
+	> div {
+		display: grid;
+		place-items: center;
+		height: 100%;
+		position: relative;
+		> span {
+			position: absolute;
+			z-index: 1;
+		}
+	}
+}
+
+.white-first div:nth-child(odd),
+.black-first div:nth-child(even) {
+	background-color: $square-cream;
+}
+
+.white-first div:nth-child(even),
+.black-first div:nth-child(odd) {
+	background-color: $square-black;
+}
