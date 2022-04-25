@@ -60,9 +60,6 @@
 	@include animate-movement(black-pawn-e7);
 }
 
-// top, if negative -- up direction
-// right, if negatitve -- right direction
-
 @keyframes white-pawn-e2 {
 	from {
 		top: 0;
